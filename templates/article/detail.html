@@ -6,7 +6,7 @@
   <div class="col-lg-10 mx-auto">
     <!-- Title -->
     <p class="mt-4 display-3 text-center">{{article.title}}</p>
-    
+
     <!-- Date/Time -->
     <p class="lead">
       Oluşturuşma Tarihi {{article.created_date}} -
@@ -16,8 +16,8 @@
     <!-- Preview Image -->
     {% if article.article_image %}
       <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="">
-    {% endif %}
     <hr>
+    {% endif %}
     <!-- Post Content -->
     <div class="bg-light rounded p-1">
       <p>

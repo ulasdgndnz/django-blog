@@ -25,21 +25,22 @@
       {% for article in article  %}
         <div class="col-4 mb-3">
           <div class="card" style="width: 22.7rem;">
+            
             <div class="card-body">
               <h5 class="card-title">{{article.title}}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{article.author}}</h6>
               <p class="card-text">{{ article.content|truncatewords:5|safe }}</p>
-
-              <div>
-                <a href="/articles/delete/{{article.id}}" class="btn btn-danger btn-sm float-right ml-1">
-                  Sil
-                </a>
-                <a href="/articles/update/{{article.id}}" class="btn btn-success btn-sm float-right">
-                  Düzenle
-                </a>
-              </div>
-
             </div>
+
+            <div class="card-footer">
+              <a href="/articles/delete/{{article.id}}" class="btn btn-danger btn-sm float-right ml-1">
+                Sil
+              </a>
+              <a href="/articles/update/{{article.id}}" class="btn btn-success btn-sm float-right">
+                Düzenle
+              </a>
+            </div>
+
           </div>
         </div>
       {% endfor %}

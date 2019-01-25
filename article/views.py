@@ -20,7 +20,7 @@ def addarticle(request):
     if form.is_valid():
         # 1. Yol uzun
         """
-        author = request.user 
+        author = request.user
         title = form.cleaned_data.get("title")
         content = form.cleaned_data.get("content")
 
@@ -48,10 +48,13 @@ def delete(request, id):
 @login_required(login_url="/users/login/")
 def update(request, id):
     article = get_object_or_404(Article, id=id)
+
     if article.author != request.user:
         return redirect('/articles/dashboard/')
-    form = ArticleForm(request.POST or None, instance=article)
+
+    form = ArticleForm(request.POST or None,request.FILES or None, instance=article)
     if form.is_valid():
+
         form.save()
         messages.success(request,"Makale Düzenlendi")
         return redirect('/articles/dashboard/')

@@ -1,0 +1,60 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-light bg-light nav-cobalt fixed-top">
+  <!-- Image and text -->
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'article\img\lotus-flower-white.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+      LOTUS
+    </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'articles' %}"><i class="fas fa-newspaper"></i> Makaleler</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> Hakkımda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-phone"></i> İletişim</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+
+      {% if request.user.is_authenticated %}
+        <li class="nav-item active dropleft">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.username}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'article:dashboard' %}">Kontrol Paneli</a>
+            <a class="dropdown-item" href="{% url 'user:logout' %}">Çıkış Yap</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Hesap Ayarları</a>
+          </div>
+        </li>
+      {% else %}
+        <li class="nav-item active dropleft">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Giriş Yap/Kayıt Ol
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'user:login' %}">Giriş Yap</a>
+            <a class="dropdown-item" href="{% url 'user:register' %}">Kayıt Ol</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item disabled" href="#">Yakında</a>
+          </div>
+        </li>
+      {% endif %}
+
+    </ul>
+
+
+
+  </div>
+</nav>

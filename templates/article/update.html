@@ -1,0 +1,36 @@
+{% extends "../layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Düzenle{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+
+    {% if messages %}
+    <div class="text-center mt-2" role="alert">
+
+      {% for message in messages %}
+      <p {% if message.tags %} class="alert alert-{{ message.tags }} h2"{% endif %}>{{ message }}</p>
+      {% endfor %}
+
+    </div>
+    {% endif %}
+
+    <h1 class="display-3">Düzenle</h1>
+
+    <form method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+      {{form.media}}
+      {{form|crispy}}
+
+      <br />
+
+      <button type="submit" class="btn btn-success">Güncelle</button>
+
+    </form>
+  </div>
+</div>
+{% endblock %}

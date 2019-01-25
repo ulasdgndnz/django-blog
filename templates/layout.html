@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'article/css/bootstrap.min.css' %}">
+
+    <!-- Barlow & ZCOOL KuaLie Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow|ZCOOL+KuaiLe" rel="stylesheet">
+
+    <!-- ICON -->
+    <link rel="icon" href="{% static 'article\img\lotus-flower.png' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'article\css\style.css' %}">
+
+    <title>{% block title %}Anasayfa{% endblock %}</title>
+
+  </head>
+  <body class="pixiv-bg body-font">
+
+    {% include "includes/navbar.html" %}
+
+    {% block content-w-c %}
+
+    <div class="container" style="margin-top: 56px">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    {% endblock %}
+
+    {% include "includes/footer.html" %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="{% static 'article\js\jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'article/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

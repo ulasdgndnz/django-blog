@@ -1,0 +1,23 @@
+{% extends "../layout.html" %}
+{% block title %}
+  Kayıt Ol
+{% endblock %}
+
+{% load crispy_forms_tags %}
+  {% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="display-3">Kayıt Olma Şimdilik Devre Dışıdır </h1>
+      <!--
+      <h1 class="display-3">Kayıt Ol</h1>
+
+      <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <button type="submit" class="btn btn-success">Kayıt ol</button>
+      </form>
+      -->
+    </div>
+  </div>
+  {% endblock %}

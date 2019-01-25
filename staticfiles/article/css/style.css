@@ -1,0 +1,60 @@
+.cobalt {background-color: #0047ab !important}
+.text-cobalt {color: #0047ab !important}
+
+.body-font {
+  font-family: 'Barlow', sans-serif;
+}
+
+.text-font {font-family: 'ZCOOL KuaiLe', sans-serif;}
+
+.nav-cobalt {border-bottom: solid 1px #0047ab !important}
+
+.nav-link:hover {
+  color: #0047ab !important
+}
+.dropdown-item:hover {
+  color: #0047ab !important
+}
+
+.p-cobalt-l {
+  border-left: solid 3px #0047ab;
+  padding-left: 5px;
+}
+
+.col-cobalt {
+  border-bottom: solid 1px #0047ab !important;
+  border-top: solid 1px #0047ab !important
+}
+
+.col-cobalt-t {
+  border-top: solid 1px #0047ab !important
+}
+
+.col-cobalt-b {
+  border-bottom: solid 1px #0047ab !important
+}
+
+.pixiv-bg {background-color: #e4e7ee !important}
+
+.headerSection {
+  background: url('/static/article/img/bgbgbg.gif') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.headerSection .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.headerSection .row {
+  height: 100vh;
+}
+
+.featuresSection {
+  background-color: #fff;
+}
+
+.featuresSection i:hover {
+  color: #0047ab !important;
+  transition: color .5s ease;
+}

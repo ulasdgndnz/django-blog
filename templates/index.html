@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content-w-c %}
+
+  <!-- HEADER SECTION -->
+
+  <header class="headerSection">
+    <div class="overlay">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col my-auto">
+            <h1 class="display-3 text-light text-font">
+              <span class="text-cobalt">Anasayfa </span>Hoşgeldin
+            </h1>
+            <p class="text-muted"><em>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet diam nulla. Pellentesque at accumsan velit. Cras dolor eros, tincidunt ac tortor et, cursus lobortis justo. In malesuada sagittis felis, rutrum cursus purus. Phasellus non nunc tortor. Nulla iaculis mi quis porta sagittis. Cras blandit felis sit amet feugiat tristique.
+            </em></p>
+            {% if messages %}
+            <div class="text-center" role="alert">
+              {% for message in messages %}
+              <p {% if message.tags %} class="alert alert-{{ message.tags }} h2"{% endif %}>{{ message }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <ul class="list-inline dev-icons">
+              <li class="list-inline-item text-light">
+                <i class="fab fa-html5  fa-7x"></i>
+              </li>
+              <li class="list-inline-item text-light">
+                <i class="fab fa-css3-alt fa-7x"></i>
+              </li>
+              <li class="list-inline-item text-light">
+                <i class="fab fa-python fa-7x"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURES SECTION -->
+
+  <section class="featuresSection pt-1 pb-5">
+    <div class="overlay">
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-md-3 text-center">
+              <i class="fab fa-connectdevelop fa-5x"></i>
+              <h3 class="mt-1">DEVELOPER</h3>
+            <p>Integer consectetur consequat posuere. Vestibulum eget felis blandit erat elementum consectetur. Donec nec tincidunt arcu.</p>
+          </div>
+
+          <div class="col-md-3 text-center">
+              <i class="fas fa-code fa-5x"></i>
+              <h3 class="mt-1">CODE</h3>
+            <p>Integer consectetur consequat posuere. Vestibulum eget felis blandit erat elementum consectetur. Donec nec tincidunt arcu.</p>
+          </div>
+
+          <div class="col-md-3 text-center">
+              <i class="fab fa-adobe fa-5x"></i>
+              <h3 class="mt-1">ADOBE</h3>
+            <p>Integer consectetur consequat posuere. Vestibulum eget felis blandit erat elementum consectetur. Donec nec tincidunt arcu.</p>
+          </div>
+
+          <div class="col-md-3 text-center">
+              <i class="fab fa-phoenix-framework fa-5x"></i>
+              <h3 class="mt-1">DESIGN</h3>
+            <p>Integer consectetur consequat posuere. Vestibulum eget felis blandit erat elementum consectetur. Donec nec tincidunt arcu.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+        <!-- ABOUT SECTION -->
+  <section class="aboutSection py-5" id="about">
+    <div class="overlay">
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <p class="display-3 text-center">Ulaş Doğan Deniz</p>
+            <hr class="bg-danger">
+            <p><img src="{% static 'article/img/resmim.jpg' %}" height="175px" width="175px"class="rounded-circle float-left mr-3" alt="...">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus odio libero, quis varius orci egestas id. Donec volutpat leo eget leo placerat, a cursus magna placerat. Etiam placerat ante sagittis ante pharetra, sit amet volutpat felis interdum. Phasellus sit amet arcu pulvinar quam ullamcorper vulputate. Morbi posuere erat a lacus auctor, vel aliquet nunc efficitur. Aliquam orci est, mollis at tellus blandit, accumsan tristique quam. Nullam interdum, nisl sit amet consectetur porttitor, elit justo pharetra neque, vitae commodo augue lectus ut felis. In vel nunc nec nulla maximus ultrices id quis orci. Donec vehicula lacus vel interdum iaculis. Nulla nec orci in enim mollis sagittis ut quis felis. Sed eleifend ac metus vel elementum. Aliquam consequat magna a urna sodales efficitur. Vestibulum sit amet diam molestie, ornare odio a, pulvinar tortor. Morbi scelerisque lacus sagittis felis pharetra ornare.
+            </p>
+            <p>
+              Donec dignissim elit ut dolor ultrices auctor. Nullam condimentum arcu nec diam euismod, vitae facilisis tortor efficitur. Ut luctus pharetra dui, a cursus lectus vehicula et. In ac dolor nec turpis pharetra consequat id sed neque. Nullam imperdiet enim nisl, et vulputate velit cursus in. Mauris lorem tellus, fermentum at feugiat facilisis, aliquet eu nibh. Etiam ac rutrum sem, ut dignissim lectus.
+            </p>
+            <p class="text-center">
+              <i class="fas fa-arrow-down"></i>SKILLS<i class="fas fa-arrow-down"></i>
+            </p>
+            <p class="p-cobalt-l">
+              HTML <i class="fas fa-angle-right"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>  <span class="text-font">4/5</span>
+            </p>
+            <p class="p-cobalt-l">
+              CSS <i class="fas fa-angle-right"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>  <span class="text-font">3/5</span>
+            </p>
+            <p class="p-cobalt-l">
+              BOOTSTRAP <i class="fas fa-angle-right"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>  <span class="text-font">3/5</span>
+            </p>
+            <p class="p-cobalt-l">
+              PYTHON <i class="fas fa-angle-right"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>  <span class="text-font">3.5/5</span>
+            </p>
+            <p>
+              <i class="fas fa-arrow-right text-cobalt"></i> DATA SCIENCE <i class="fas fa-atom"></i>
+            </p>
+            <p>
+              <i class="fas fa-arrow-right text-cobalt"></i> DATA VISUALIZATION <i class="far fa-chart-bar"></i>
+            </p>
+            <p class="p-cobalt-l">
+              DJANGO <i class="fas fa-angle-right"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>  <span class="text-font">2.5/5</span>
+            </p>
+            <hr class="bg-danger">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

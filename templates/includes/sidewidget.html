@@ -1,0 +1,67 @@
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 ">
+
+  <!-- Search Widget -->
+  <div class="card my-4">
+    <h5 class="card-header cobalt text-light">Arama</h5>
+    <div class="card-body">
+      <form>
+        <div class="input-group">
+          {% csrf_token %}
+          <input type="text" name="keyword" class="form-control" maxlength="64" placeholder="e.g. Django staticfiles">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-success my-2 my-sm-0">Ara</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Categories Widget -->
+  <div class="card my-4">
+    <h5 class="card-header disabled cobalt text-light">Kategoriler (Yakında)</h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#">Web Design</a>
+            </li>
+            <li>
+              <a href="#">HTML</a>
+            </li>
+            <li>
+              <a href="#">Freebies</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#">JavaScript</a>
+            </li>
+            <li>
+              <a href="#">CSS</a>
+            </li>
+            <li>
+              <a href="#">Tutorials</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Widget -->
+  <div class="card my-4">
+    <h5 class="card-header cobalt text-light">Yazarlar</h5>
+    <div class="card-body">
+      <ul class="list-group">
+        {% for user in users %}
+        <li class="list-group-item">{{user.username}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</div>

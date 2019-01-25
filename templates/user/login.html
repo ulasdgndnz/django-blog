@@ -1,0 +1,30 @@
+{% extends "../layout.html" %}
+{% block title %}
+  Giriş Yap
+{% endblock %}
+
+{% load crispy_forms_tags %}
+  {% block content %}
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-3">Giriş Yapma Şimdilik Devre Dışıdır</h1>
+        <!--
+        <h1 class="display-3">Giriş Yap</h1>
+        {% if messages %}
+        <div class="text-center" role="alert">
+          {% for message in messages %}
+          <p {% if message.tags %} class="alert alert-{{ message.tags }} h2"{% endif %}>{{ message }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <form method="post">
+          {% csrf_token %}
+          {{form|crispy}}
+          <br />
+          <button type="submit" class="btn btn-success">Giriş Yap</button>
+        </form>
+        -->
+      </div>
+    </div>
+
+  {% endblock %}

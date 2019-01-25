@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}Makaleler{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <h1 class="my-4 text-center"><hr class="cobalt">
+          <i class="fas fa-angle-double-left"></i>
+          Makaleler
+          <i class="fas fa-angle-double-right"></i>
+          <hr class="cobalt">
+        </h1>
+
+        {% if articles %}
+          <!-- Blog Post -->
+          {% for article in articles %}
+
+          <div class="card mb-4">
+            {% if article.article_image %}
+              <img class="card-img-top" src="{{article.article_image.url}}" width="750px" height="300px" alt="Card image cap">
+            {% endif %}
+            <div class="card-body">
+              <h2 class="card-title">{{article.title}}</h2>
+              <p class="card-text">
+                {{article.content|truncatewords:30|safe}}
+              </p>
+              <a href="{% url 'article:detail' article.id %}" class="btn btn-primary">Makaleye Git &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on {{article.created_date}} by
+              <a href="#">{{article.author}}</a>
+            </div>
+          </div>
+
+          {% endfor %}
+
+        {% else %}
+          <div class="alert alert-danger" role="alert">
+            Makale Bulunamadı
+          </div>
+        {% endif %}
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4 inline">
+          <li class="page-item">
+            {% if articles.has_previous %}
+              <a class="page-link" href="?page=1">İlk</a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="?page={{ articles.previous_page_number }}">&larr; Önceki</a>
+            {% endif %}
+          </li>
+
+          <li class="page-item">
+            {% if articles.has_next %}
+              <a class="page-link" href="?page={{ articles.next_page_number }}">Sonraki &rarr;</a>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="?page={{ articles.paginator.num_pages }}">Son</a>
+            {% endif %}
+          </li>
+        </ul>
+
+      </div>
+
+    {% include "includes/sidewidget.html" %}
+
+    </div>
+    <!-- /.row -->
+
+{% endblock %}

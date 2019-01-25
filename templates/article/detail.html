@@ -1,0 +1,102 @@
+{% extends "../layout.html" %}
+{% block title %}Makale: {{article.title}}{% endblock %}
+{% block content %}
+<div class="row ">
+  <!-- Post Content Column -->
+  <div class="col-lg-10 mx-auto">
+    <!-- Title -->
+    <p class="mt-4 display-3 text-center">{{article.title}}</p>
+    
+    <!-- Date/Time -->
+    <p class="lead">
+      Oluşturuşma Tarihi {{article.created_date}} -
+      Oluşturan <a href="#">{{article.author}}</a>
+    </p>
+    <hr>
+    <!-- Preview Image -->
+    {% if article.article_image %}
+      <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="">
+    {% endif %}
+    <hr>
+    <!-- Post Content -->
+    <div class="bg-light rounded p-1">
+      <p>
+        {{article.content|safe}}
+      </p>
+    </div>
+
+    <hr>
+
+    <!-- Comments Form -->
+    <div class="card my-4">
+      <h5 class="card-header">Yorum Ekle</h5>
+      <div class="card-body">
+        <form method="post" action="{% url 'article:addcomment' article.id %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">İsim</label>
+            <input name="comment_author" type="text" class="form-control" id="exampleInputEmail1" placeholder="İsminizi Giriniz">
+          </div>
+          <div class="form-group">
+            <label for="comment">Yorum</label>
+            <textarea name="comment_content" class="form-control" rows="3" id="comment" placeholder="Yorum Yap"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+      <p class="display-4 text-center">Yorumlar</p>
+
+    <!-- Single Comment -->
+    {% if comment %}
+    {% for comment in comment %}
+      <div class="media mb-4">
+        <div class="media-body bg-light p-2">
+          <h5 class="mt-0">{{comment.comment_author}}</h5>
+          <small>{{comment.comment_date}}</small>
+          <p>{{comment.comment_content}}</p>
+        </div>
+      </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- EĞER KULLANICI GİRİŞ YAPMIŞSA İSİM OTO DOLDURULSUN -->
+
+    <!-- Comment with nested comments
+    <div class="media mb-4">
+
+      <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+      <div class="media-body">
+
+        <h5 class="mt-0">Commenter Name</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibu
+        <div class="media mt-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+
+        <div class="media mt-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+          </div>
+        </div>
+
+      </div>
+
+    </div>-->
+
+
+
+  </div>
+
+
+
+</div>
+{% endblock %}

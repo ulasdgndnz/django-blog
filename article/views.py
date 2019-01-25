@@ -18,15 +18,14 @@ def contact(request):
 def addarticle(request):
     form = ArticleForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-        # 1. Yol
+        # 1. Yol uzun
         """
-        author = request.user
+        author = request.user 
         title = form.cleaned_data.get("title")
         content = form.cleaned_data.get("content")
 
         newArticle = Article(author=author, title=title, content=content)
         newArticle.save()"""
-
         # 2. Yol
         article = form.save(commit=False) # commit = False -> newArticle.save()
         # form.save() formda verilenleri yerleştiriyor

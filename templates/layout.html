@@ -25,6 +25,7 @@
 
   </head>
   <body class="pixiv-bg body-font">
+    {% block content-w-nf %}
 
     {% include "includes/navbar.html" %}
 
@@ -39,6 +40,8 @@
     {% endblock %}
 
     {% include "includes/footer.html" %}
+
+    {% endblock %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

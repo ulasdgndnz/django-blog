@@ -58,3 +58,24 @@
   color: #0047ab !important;
   transition: color .5s ease;
 }
+
+.neonSection {
+  background: url('/static/article/img/todobg.gif') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.neon{
+  border: solid 2px #00dba0;
+}
+
+.neon2 {
+  border: solid 1px #8F8FFF;
+}
+
+.neon3 {color: #FFC832 !important}
+
+.neon4 {
+  background-color: #A52A2A !important;
+  border-color: #A52A2A !important;
+}

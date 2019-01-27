@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'article',
     'user',
+    'todo',
 ]
 
 MIDDLEWARE = [

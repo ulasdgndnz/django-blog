@@ -1,0 +1,62 @@
+{% extends "../layout.html" %}
+{% block content-w-nf %}
+  <header class="neonSection">
+
+    <div class="container">
+      <div class="row text-center">
+        <div class="col p-5">
+          <a href="#" class="btn btn btn-danger float-left">Geri Dön</a>
+          <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModalCenter">
+            Ekle
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Hedef Ekle</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="/todos/addtodo" method="post">
+                  {% csrf_token %}
+                  <div class="modal-body">
+                    <input class="form-control" type="text" name="todotitile">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <p class="display-1 neon3 text-font">Yapılacaklar</p>
+
+          <div class="p-4 neon rounded text-light">
+
+            {% for todo in todos %}
+                <div class="input-group mb-3 neon2 rounded">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text neon4">
+                      <input type="checkbox" name="checked" aria-label="Checkbox for following text input"
+                      {% if todo.checked == True %}checked{% endif %}>
+                    </div>
+                  </div>
+                  <p class="my-auto pl-1">
+                    {{todo.todo_title}}
+                  </p>
+                  <a href="{% url 'todo:todo_deletetodo' todo.id %}" class="btn btn-danger ml-auto btn-sm">Sil</a>
+                </div>
+            {% endfor %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}

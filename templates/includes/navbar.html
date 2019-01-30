@@ -24,6 +24,10 @@
       </li>
     </ul>
 
+    <ul class="navbar-nav mx-auto">
+      <li><a href="{% url 'todo:todo_index' %}" class="btn btn-outline-warning">Yapılacaklar</a></li>      
+    </ul>
+
     <ul class="navbar-nav ml-auto">
 
       {% if request.user.is_authenticated %}

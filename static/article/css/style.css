@@ -79,3 +79,13 @@
   background-color: #A52A2A !important;
   border-color: #A52A2A !important;
 }
+
+.neon5 {color: #59EEFD; font-weight: bold;}
+
+.etiket {
+  background-color: #8F8FFF;
+  font-size: 14px;
+  border-radius: 7px;
+  padding: 2px;
+  color: #FFC832 !important;
+}

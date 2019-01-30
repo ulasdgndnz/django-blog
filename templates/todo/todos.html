@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row text-center">
         <div class="col p-5">
-          <a href="#" class="btn btn btn-danger float-left">Geri Dön</a>
+          <a href="/" class="btn btn btn-danger float-left">Geri Dön</a>
           <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModalCenter">
             Ekle
           </button>
@@ -39,17 +39,11 @@
           <div class="p-4 neon rounded text-light">
 
             {% for todo in todos %}
-                <div class="input-group mb-3 neon2 rounded">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text neon4">
-                      <input type="checkbox" name="checked" aria-label="Checkbox for following text input"
-                      {% if todo.checked == True %}checked{% endif %}>
-                    </div>
-                  </div>
-                  <p class="my-auto pl-1">
-                    {{todo.todo_title}}
+                <div class="mb-3 neon2 rounded" style="height: 32.97px">
+                  <p class="my-auto mx-auto neon5">
+                      <span>{{todo.todo_title}}</span>
+                      <span><a href="{% url 'todo:todo_deletetodo' todo.id %}" class="btn btn-danger float-right btn-sm">Sil</a></span>
                   </p>
-                  <a href="{% url 'todo:todo_deletetodo' todo.id %}" class="btn btn-danger ml-auto btn-sm">Sil</a>
                 </div>
             {% endfor %}
 

@@ -23,8 +23,17 @@
             {% if article.article_image %}
               <img class="card-img-top" src="{{article.article_image.url}}" width="750px" height="300px" alt="Card image cap">
             {% endif %}
+
             <div class="card-body">
-              <h2 class="card-title">{{article.title}}</h2>
+              <div class='row card-title'>
+                <div class="col">
+                  <h3>{{article.title}}</h3>
+                </div>
+                <div class="col">
+                  <a class="etiket float-right">#{{article.category}}</a>
+                </div>
+              </div>
+
               <p class="card-text">
                 {{article.content|truncatewords:30|safe}}
               </p>

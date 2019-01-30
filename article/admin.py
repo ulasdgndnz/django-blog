@@ -1,5 +1,5 @@
 from django.contrib import admin
-from article.models import Article, Comment
+from article.models import Article, Comment, Category
 
 # Register your models here.
 
@@ -7,6 +7,7 @@ from article.models import Article, Comment
 
 #---> ADMİN PANELİ ÖZELLEŞTİRMELERİ <---#
 admin.site.register(Comment)
+admin.site.register(Category)
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):

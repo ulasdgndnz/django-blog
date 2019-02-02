@@ -9,8 +9,9 @@
 
     <!-- Date/Time -->
     <p class="lead">
-      Oluşturuşma Tarihi {{article.created_date}} -
-      Oluşturan <a href="#">{{article.author}}</a>
+      <i class="fas fa-calendar-alt"></i> {{article.created_date}} -
+      <i class="fas fa-user"></i> <a href="#">{{article.author}}</a> -
+      <i class="far fa-eye"></i> {{article.views}}
     </p>
     <hr>
     <!-- Preview Image -->
@@ -35,7 +36,11 @@
           {% csrf_token %}
           <div class="form-group">
             <label for="exampleInputEmail1">İsim</label>
+            {% if request.user.is_authenticated %}
+            <input name="comment_author" type="text" class="form-control" id="exampleInputEmail1" disabled value="{{request.user.username}}">
+            {% else %}
             <input name="comment_author" type="text" class="form-control" id="exampleInputEmail1" placeholder="İsminizi Giriniz">
+            {% endif %}
           </div>
           <div class="form-group">
             <label for="comment">Yorum</label>

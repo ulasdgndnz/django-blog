@@ -40,8 +40,8 @@
               <a href="{% url 'article:detail' article.id %}" class="btn btn-primary">Makaleye Git &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-              Oluşturulma Tarihi {{article.created_date}} - Oluşturan
-              <a href="#">{{article.author}}</a>
+              <i class="fas fa-calendar-alt"></i> {{article.created_date}} - <i class="fas fa-user"></i>
+              <a href="#">{{article.author}}</a> - <i class="far fa-eye"></i> {{article.views}}
             </div>
           </div>
 

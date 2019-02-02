@@ -69,6 +69,8 @@ def detail(request, id):
         return render(request,'articles.html',{'contacts': article_list})
 
     article = Article.objects.get(id = id)
+    article.views+=1
+    article.save()
     comment = article.comments.all()
     context = {
         "article":article,

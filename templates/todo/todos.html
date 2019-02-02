@@ -6,9 +6,11 @@
       <div class="row text-center">
         <div class="col p-5">
           <a href="/" class="btn btn btn-danger float-left">Geri Dön</a>
+          {% if request.user.is_authenticated %}
           <button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModalCenter">
             Ekle
           </button>
+          {% endif %}
 
           <!-- Modal -->
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

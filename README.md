@@ -1,2 +1,2 @@
 "# django-blog" 
-<a href="alkahesto.pythonanywhere.com">Alkahesto Blog</a>
+<a href="https://alkahesto.pythonanywhere.com">Alkahesto Blog</a>
